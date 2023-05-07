@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capy Coin</title>
+    <style>
+        body {
+            font-family: Cambria, sans-serif;
+            text-align: center;
+            padding-top: 100px;
+            background-image: url('capy.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            padding: 10px 0;
+            background-color: #f0f0f0;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .solana-address {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+            display: inline-block;
+            padding: 5px 10px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+        }
+         #changing-text {
+            opacity: 1;
+            transition: opacity 0.5s ease-in-out;
+        }
+        h1 {
+            font-family: Cambria;
+            color: #444444;
+            font-size: 40px;
+        }
+        #title{
+            font-size: 52px;
+        }
+    </style>
+    <script>
+        let phrases = [
+            "Capy days are ahead",
+            "Capy feet, dance to the beat",
+            "This is my capy place",
+            "Don't worry, be capy",
+            "Capy-go-lucky",
+            "It's always capy hour",
+            "Be a capy camper",
+            "So capy to see you",
+        ];
+        let counter = 0;
+        function changeText() {
+            const textElement = document.getElementById("changing-text");
+            textElement.style.opacity = 0;
+            setTimeout(() => {
+                textElement.innerHTML = phrases[counter];
+                textElement.style.opacity = 1;
+                counter = (counter + 1) % phrases.length;
+            }, 500);
+        }
+
+    setInterval(changeText, 5000);
+</script>
+</head>
+<body onload="changeText()">
+    <h1 id ="title">Capy Coin</h1>
+    <h1 id="changing-text"></h1>
+    <footer class="solana-footer">
+        View Capy Coin on Solana Explorer: <a href="https://explorer.solana.com/address/AWyCPF85i9CKeHrwjZmwri6h5LpYMUTbFE9WSTQpjPWT" target="_blank"><span id="solana-address">AWyCPF85i9CKeHrwjZmwri6h5LpYMUTbFE9WSTQpjPWT</span>
+            </a><br>
+        <span>Capy Coin is for speculative purposes and currently serves no utility.</span>
+    </footer>
+</body>
+</html>
